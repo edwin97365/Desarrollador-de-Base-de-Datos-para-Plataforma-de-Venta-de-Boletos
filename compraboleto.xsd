@@ -1,0 +1,27 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="CompraBoleto">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="fecha_hora_compra" type="xs:dateTime"/>
+                <xs:element name="estatus_compra">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="Compra Finalizada"/>
+                            <xs:enumeration value="Cancelada"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="metodo_pago" type="xs:string"/>
+                <xs:element name="estado_pago">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="Pagado"/>
+                            <xs:enumeration value="Pendiente"/>
+                            <xs:enumeration value="Reembolsado"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

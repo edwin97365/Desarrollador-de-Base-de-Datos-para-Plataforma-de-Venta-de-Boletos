@@ -1,0 +1,55 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="Evento">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="nombre_evento" type="xs:string"/>
+                <xs:element name="fecha" type="xs:date"/>
+                <xs:element name="hora" type="xs:time"/>
+                <xs:element name="descripcion" type="xs:string"/>
+                <xs:element name="precio_vip">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:decimal">
+                            <xs:minInclusive value="0"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="precio_preferencial">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:decimal">
+                            <xs:minInclusive value="0"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="precio_general">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:decimal">
+                            <xs:minInclusive value="0"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="categoria_evento">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="Concierto"/>
+                            <xs:enumeration value="Obra de teatro"/>
+                            <xs:enumeration value="Festival"/>
+                            <xs:enumeration value="Conferencia"/>
+                            <xs:enumeration value="Exposicion"/>
+                            <xs:enumeration value="Fiesta"/>
+                            <xs:enumeration value="Evento deportivo"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="estatus_evento">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="Programado"/>
+                            <xs:enumeration value="Cancelado"/>
+                            <xs:enumeration value="Realizado"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
